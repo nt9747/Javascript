@@ -1,0 +1,30 @@
+<html>
+
+<head>
+  <title> CheckStr </title>
+</head>
+
+<body>
+  <script>
+    function checkstr(str, checkstr) {
+      var first = str.split("");
+      var second = str.split("");
+      first = first.sort();
+      second = second.sort();
+      var result = true;
+      if (first.length == second.length) {
+        for (let i = 0; i < first.length; i++) {
+          for (let j = 0; j < second.length; j++) {
+            if (first[i] !== second[i]) {
+              result = false;
+            }
+          }
+        }
+      }
+      return result;
+    }
+    console.log(checkstr("nam", "man"));
+    
+
+  </script>
+</body>
