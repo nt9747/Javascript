@@ -1,0 +1,104 @@
+<html>
+
+<head>
+  <title> CheckStr </title>
+</head>
+
+<body>
+  <script>
+    let str = prompt("Nhap vao chuoi: ");
+    str = str.toLowerCase();
+    let strnm = str.split("");
+    console.log("-----------------cau a--------------------")
+    console.log(str);
+    let str1 = str.split("");
+    function checkEqualSpecial(arrcheck) {
+      for (let i = 0; i < arrcheck.length; i++) {
+          if (!(arrcheck[i].charCodeAt() > 96 && arrcheck[i].charCodeAt() < 123)) {
+            return false;
+          }   
+      }
+    }
+    for (let i = 0; i < str1.length; i++) {
+      if (!(str1[i].charCodeAt() > 96 && str1[i].charCodeAt() < 123)) {
+        str1[i] = ",";
+      }
+    }
+    //console.log(str1);
+    for (let i = 0; i < str1.length; i++) {
+      if (str1[i] == ",") {
+        while (str1[i + 1] == ",") {
+          str1.splice(i + 1, 1);
+        }
+      }
+    }
+    if (str1[0] == ",") {
+      str1.splice(0, 1);
+    }
+
+    let newstr = "";
+    for (let i = 0; i < str1.length; i++) {
+      newstr += str1[i];
+    }
+    newstr = newstr.split(",");
+    console.log("-----------------cau b--------------------");
+    console.log(newstr);
+    //console.log(str1);
+    let str2 = newstr;
+    let specialKey = new Array();
+    for (let i = 0; i < strnm.length; i++) {
+      if (!(strnm[i].charCodeAt() > 96 && strnm[i].charCodeAt() < 123)) {
+        specialKey.push(strnm[i]);
+      }
+    }
+    var c = {};
+    c.specialKey = specialKey;
+    for (let i = 0; i < str2.length; i++) {
+      const key = str2[i].charAt(0);
+      if (c[key]) {
+        c[key].push(str2[i]);
+      } else {
+        c[key] = [str2[i]];
+      }
+    }
+    console.log("-----------------cau c--------------------")
+    console.log(c);
+    console.log("-----------------cau d--------------------")
+    let c1 = Object.assign({}, c);
+    const keys = Object.keys(c1);
+    for (let key of keys) {
+      if (c1[key].length % 2 != 0) {
+        c1[key].sort();
+      } else {
+        c1[key].sort();
+        c1[key].reverse();
+      }
+    }
+    console.log(c1);
+    console.log("-----------------cau e--------------------")
+    let c2 = Object.assign({}, c);
+    const keyss = Object.keys(c2);
+    for (let key of keyss) {
+      c2[key].sort();
+      c2[key].reverse();
+    }
+    console.log(c2);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </script>
+</body>

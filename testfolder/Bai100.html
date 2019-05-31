@@ -1,0 +1,31 @@
+<html>
+
+<head>
+  <title> CheckStr </title>
+</head>
+
+<body>
+  <script>
+    function check1num2arr(arr, arr2) {
+      arr = arr.split(",");
+      arr2 = arr2.split(",");
+      var flag = true;
+      arr = arr.sort(function (a, b) {
+        return a - b;
+      })
+      arr2 = arr2.sort(function (a, b) {
+        return a - b;
+      })
+      console.log(arr);
+      console.log(arr2);
+      for (var i = 0; i < arr.length; i++) {
+        for (var j = 0; j < arr2.length; j++) {
+
+        }
+      }
+      return flag;
+
+    }
+    console.log(check1num2arr("3,1,2,5", "7,2,3,1"));
+  </script>
+</body>
