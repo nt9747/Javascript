@@ -33,14 +33,14 @@ console.log(inArr.searchNumberA());
 
 Array.prototype.searchNumberB = function () {
   let k;
-  for (let i = 0; i < outArr.length - 1; i++) {
+  for (let i = 0; i < outArr.length; i++) {
     for (let j = i + 1; j < outArr.length; j++) {
       if (outArr[i][1] > outArr[j][1]) {
         k = outArr[i];
         outArr[i] = outArr[j];
         outArr[j] = k;
       }
-      else if (outArr[i][1] == outArr[j][1]) {
+      else if (outArr[i][1] == outArr[j][1]) {  
         if (i > j) {
           k = outArr[i];
           outArr[i] = outArr[j];
